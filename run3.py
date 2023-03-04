@@ -11,13 +11,13 @@ class Dress:
     def sell(self, quantity):
         if self.stock >= quantity:
             self.stock -= quantity
-            print(f"{quantity} adet {self.color} elbise satıldı.")
+            print(f"{quantity} piece of {self.color} cloth has been sold.")
         else:
-            print("Stokta yeterli elbise yok.")
+            print("Not enough quantity for sell.")
     
     def update_stock(self, quantity):
         self.stock += quantity
-        print(f"{quantity} adet {self.color} elbise stoklara eklendi.")
+        print(f"{quantity} piece of {self.color} cloth has been sold.")
     
 class DressStore:
     def __init__(self):
@@ -25,14 +25,14 @@ class DressStore:
     
     def add_dress(self, dress):
         self.dresses.append(dress)
-        print(f"{dress.color} elbisesi sisteme eklendi.")
+        print(f"{dress.color} cloth has been added to system.")
     
     def remove_dress(self, dress):
         if dress in self.dresses:
             self.dresses.remove(dress)
-            print(f"{dress.color} elbisesi sistemden silindi.")
+            print(f"{dress.color} cloth successfully deleted in system.")
         else:
-            print(f"{dress.color} elbisesi sistemde yok.")
+            print(f"{dress.color} cloth not found in system.")
     
     def search_dress(self, color):
         for dress in self.dresses:
@@ -45,14 +45,14 @@ class DressStore:
         if dress:
             dress.sell(quantity)
         else:
-            print(f"{color} elbisesi sistemde yok.")
+            print(f"{color} cloth is not found in system.")
     
     def update_stock(self, color, quantity):
         dress = self.search_dress(color)
         if dress:
             dress.update_stock(quantity)
         else:
-            print(f"{color} elbisesi sistemde yok.")
+            print(f"{color} cloth is not found in system.")
 
 
 store = DressStore()
@@ -62,16 +62,16 @@ dress2 = Dress("Siyah", "S", 149.99, 15)
 
 
 store.add_dress(dress1)
-# Kırmızı elbisesi sisteme eklendi.
+# Add
 
 store.add_dress(dress2)
-# Siyah elbisesi sisteme eklendi.
+# Add
 
 store.remove_dress(dress2)
-# Siyah elbisesi sistemden silindi.
+# Remove
 
 store.sell_dress("Kırmızı", 5)
-# 5 adet Kırmızı elbise satıldı.
+# Sell Piece
 
 store.update_stock("Kırmızı", 10)
-# 10 adet Kırmızı elbise stoklara eklendi.
+# Update Stock-Colot
