@@ -1,3 +1,6 @@
+"""
+Generated for example#3 writing OOB example in python 3
+"""
 class Dress:
     def __init__(self, color, size, price, stock):
         self.color = color

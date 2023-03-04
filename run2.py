@@ -1,3 +1,7 @@
+"""
+Generated for example#2 writing OOB example in python 3
+"""
+
 class Plate:
     def __init__(plate, color,metarial,size):
         plate.color = color

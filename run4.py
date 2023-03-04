@@ -1,3 +1,6 @@
+"""
+Generated for example#3 writing OOB example in python 3
+"""
 class Cafe:
     def __init__(self):
         self.customers = []
